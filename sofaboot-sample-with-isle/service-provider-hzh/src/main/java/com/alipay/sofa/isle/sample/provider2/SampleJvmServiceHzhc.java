@@ -24,8 +24,9 @@ import org.springframework.stereotype.Component;
  * @author xuanbei 18/5/5
  */
 //beanName = ServiceFactoryBean#com.alipay.sofa.isle.sample.facade.SampleJvmService:annotationImplHzh
+//beanName = ServiceFactoryBean#com.alipay.sofa.isle.sample.facade.SampleJvmService:annotationImplHzh
 @SofaService(uniqueId = "annotationImplHzh")
-@Component
+//@Component
 public class SampleJvmServiceHzhc implements SampleJvmService {
     @Override
     public String message() {
