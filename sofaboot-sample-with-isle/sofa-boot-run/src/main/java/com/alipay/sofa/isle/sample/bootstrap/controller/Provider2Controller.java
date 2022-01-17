@@ -14,24 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alipay.sofa.isle.sample.provider2;
+package com.alipay.sofa.isle.sample.bootstrap.controller;
 
-import com.alipay.sofa.isle.sample.facade.SampleJvmService;
-import com.alipay.sofa.runtime.api.annotation.SofaService;
-import org.springframework.stereotype.Component;
+import com.alipay.sofa.isle.sample.provider.api.Provider1;
+import com.alipay.sofa.isle.sample.provider2.api.Provider2;
+import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
 
 /**
- * @author xuanbei 18/5/5
+ * @author xuanbei
+ * @since 2.4.5
  */
-//beanName = ServiceFactoryBean#com.alipay.sofa.isle.sample.facade.SampleJvmService:annotationImplHzh
-//beanName = ServiceFactoryBean#com.alipay.sofa.isle.sample.facade.SampleJvmService:annotationImplHzh
-@SofaService(uniqueId = "annotationImplHzh")
-@Component
-public class SampleJvmServiceHzhc implements SampleJvmService {
-    @Override
-    public String message() {
-        String message = "Hello, jvm service annotation implementation hzh-------";
-        System.out.println(message);
-        return message;
+@RestController
+public class Provider2Controller {
+
+    //xml
+    @SofaReference
+    private Provider2 provider2;
+
+
+    @RequestMapping("/provider2")
+    public void provider2() throws IOException {
+        provider2.action();
     }
 }

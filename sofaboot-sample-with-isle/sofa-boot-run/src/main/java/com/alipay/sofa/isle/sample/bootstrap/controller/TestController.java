@@ -18,6 +18,7 @@ package com.alipay.sofa.isle.sample.bootstrap.controller;
 
 import java.io.IOException;
 
+import com.alipay.sofa.isle.sample.facade.A;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -50,6 +51,9 @@ public class TestController {
 
     @SofaReference(uniqueId = "annotationImplHzp")
     private SampleJvmService annotationImplHzp;
+
+    @SofaReference
+    private A a;
 
     @RequestMapping("/serviceWithoutUniqueId")
     public String serviceWithoutUniqueId() throws IOException {

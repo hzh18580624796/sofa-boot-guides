@@ -17,5 +17,7 @@
 
     <!--<bean id="sampleJvmServiceAnnotationHzh" class="com.alipay.sofa.isle.sample.provider.SampleJvmServiceHzh"/>-->
 
-    <bean id="publishServiceWithClient" class="com.alipay.sofa.isle.sample.provider.PublishServiceWithClient" init-method="init"/>
+    <bean id="publishServiceWithClientx" class="com.alipay.sofa.isle.sample.provider.PublishServiceWithClient" init-method="init"/>
+
+    <bean id="componentScanConfigx" class="com.alipay.sofa.isle.sample.provider.ComponentScanConfig" />
 </beans>

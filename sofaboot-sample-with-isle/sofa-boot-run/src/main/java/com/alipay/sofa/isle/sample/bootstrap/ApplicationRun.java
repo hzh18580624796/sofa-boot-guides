@@ -24,7 +24,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author xuanbei 18/5/5
  */
 @SpringBootApplication
-@ComponentScan("com.alipay.sofa.isle.sample")
+//@ComponentScan("com.alipay.sofa.isle.sample")
 public class ApplicationRun {
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(ApplicationRun.class);

@@ -7,4 +7,6 @@
        default-autowire="byName">
 
 
+    <bean id="componentScanConfigx" class="com.alipay.sofa.isle.sample.provider2.ComponentScanConfig" />
+
 </beans>

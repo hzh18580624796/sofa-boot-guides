@@ -18,7 +18,11 @@ package com.alipay.sofa.isle.sample.provider;
 
 import com.alipay.sofa.isle.sample.facade.SampleJvmService;
 import com.alipay.sofa.runtime.api.annotation.SofaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author xuanbei 18/5/5
@@ -26,6 +30,15 @@ import org.springframework.stereotype.Component;
 @SofaService(uniqueId = "annotationImplHzp")
 @Component
 public class SampleJvmServiceHzp implements SampleJvmService {
+
+    @Autowired
+    private ApplicationContext applicationContext;
+
+    @PostConstruct
+    public void init() {
+        System.out.println("SampleJvmServiceHzp.applicationContext= " + applicationContext);
+    }
+
     @Override
     public String message() {
         String message = "Hello, jvm service annotation implementation hzp";
