@@ -19,6 +19,9 @@ package com.alipay.sofa.isle.sample.provider;
 import com.alipay.sofa.isle.sample.facade.SampleJvmService;
 import com.alipay.sofa.runtime.api.annotation.SofaService;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author xuanbei 18/5/5
@@ -26,6 +29,12 @@ import org.springframework.stereotype.Component;
 @SofaService(uniqueId = "annotationImplHzh")
 @Component
 public class SampleJvmServiceHzh implements SampleJvmService {
+
+    @PostConstruct
+    public void init(){
+        System.out.println("x");
+    }
+
     @Override
     public String message() {
         String message = "Hello, jvm service annotation implementation hzh";

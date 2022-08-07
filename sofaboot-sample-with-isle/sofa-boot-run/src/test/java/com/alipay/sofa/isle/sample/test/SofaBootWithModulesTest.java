@@ -16,10 +16,13 @@
  */
 package com.alipay.sofa.isle.sample.test;
 
+import com.alipay.sofa.isle.sample.bootstrap.ApplicationRun;
+import com.alipay.sofa.test.runner.SofaBootRunner;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.alipay.sofa.isle.sample.facade.SampleJvmService;
@@ -28,13 +31,15 @@ import com.alipay.sofa.runtime.api.annotation.SofaReference;
 /**
  * @author xuanbei 18/5/17
  */
-@SpringBootTest
+@SpringBootTest(classes = ApplicationRun.class)
 @RunWith(SpringRunner.class)
+//@SpringBootTest(classes = ApplicationRun.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class SofaBootWithModulesTest {
     @SofaReference
     private SampleJvmService sampleJvmService;
 
-    @SofaReference(uniqueId = "annotationImpl")
+    @SofaReference(uniqueId = "annotationImplx")
     private SampleJvmService sampleJvmServiceAnnotationImpl;
 
     @SofaReference(uniqueId = "serviceClientImpl")

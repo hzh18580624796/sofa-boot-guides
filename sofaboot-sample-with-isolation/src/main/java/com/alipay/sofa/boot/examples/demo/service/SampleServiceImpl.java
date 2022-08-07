@@ -24,6 +24,9 @@ import com.alipay.sofa.boot.examples.demo.service.facade.SampleService;
  */
 public class SampleServiceImpl implements SampleService {
     public String service() {
+        System.out.println("service print");
+        System.out.println("service print2");
+        System.out.println("service print3");
         return "service";
     }
 }

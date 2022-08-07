@@ -14,30 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alipay.sofa.isle.sample.provider;
+package com.alipay.sofa.isle.sample.provider.web;
 
-import com.alipay.sofa.isle.sample.facade.SampleJvmService;
-import com.alipay.sofa.runtime.api.annotation.SofaService;
+import com.alipay.sofa.isle.sample.provider.api.Provider1;
+import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
+import java.io.IOException;
 
 /**
- * @author xuanbei 18/5/5
+ * @author xuanbei
+ * @since 2.4.5
  */
-@SofaService(uniqueId = "annotationImplx")
-public class SampleJvmServiceAnnotationImpl implements SampleJvmService {
+@RestController
+public class Provider1Controller {
 
-    @PostConstruct
-    public void init(){
+    @SofaReference
+    private Provider1 provider1;
 
-        System.currentTimeMillis();
-    }
-
-
-    @Override
-    public String message() {
-        String message = "Hello, jvm service annotation implementation.";
-        System.out.println(message);
-        return message;
+    @RequestMapping("/provider1")
+    public void provider1() throws IOException {
+        provider1.action();
     }
 }

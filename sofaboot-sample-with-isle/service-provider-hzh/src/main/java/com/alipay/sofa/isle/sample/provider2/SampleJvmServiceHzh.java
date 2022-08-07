@@ -26,8 +26,8 @@ import org.springframework.stereotype.Component;
 //beanName = ServiceFactoryBean#com.alipay.sofa.isle.sample.facade.SampleJvmService:annotationImplHzh
 //beanName = ServiceFactoryBean#com.alipay.sofa.isle.sample.facade.SampleJvmService:annotationImplHzh
 @SofaService(uniqueId = "annotationImplHzh")
-@Component
-public class SampleJvmServiceHzhc implements SampleJvmService {
+//@Component
+public class SampleJvmServiceHzh implements SampleJvmService {
     @Override
     public String message() {
         String message = "Hello, jvm service annotation implementation hzh-------";

@@ -19,8 +19,13 @@ package com.alipay.sofa.isle.sample.bootstrap.controller;
 import com.alipay.sofa.isle.sample.provider.api.Provider1;
 import com.alipay.sofa.isle.sample.provider2.api.Provider2;
 import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.io.IOException;
 
@@ -29,15 +34,26 @@ import java.io.IOException;
  * @since 2.4.5
  */
 @RestController
-public class Provider2Controller {
+public class Provider2Controller implements ApplicationRunner {
 
     //xml
     @SofaReference
     private Provider2 provider2;
 
+//    @Autowired
+//    private DispatcherServlet dispatcherServlet;
+//    @Autowired
+//    private RequestMappingHandlerMapping requestMappingHandlerMapping;
+
+
+
 
     @RequestMapping("/provider2")
     public void provider2() throws IOException {
         provider2.action();
+    }
+
+    public void run(ApplicationArguments args) throws Exception {
+        System.out.println("x");
     }
 }

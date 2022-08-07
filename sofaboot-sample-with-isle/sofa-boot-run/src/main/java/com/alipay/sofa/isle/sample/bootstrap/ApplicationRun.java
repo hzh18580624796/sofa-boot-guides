@@ -16,6 +16,7 @@
  */
 package com.alipay.sofa.isle.sample.bootstrap;
 
+import com.alipay.sofa.isle.sample.bootstrap.controller.TestController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,9 +26,29 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 //@ComponentScan("com.alipay.sofa.isle.sample")
+@ComponentScan({"com.alipay.sofa.isle.sample.provider.web","com.alipay.sofa.isle.sample.consumer.web",
+        "com.alipay.sofa.isle.sample.bootstrap"})
 public class ApplicationRun {
     public static void main(String[] args) {
+
+        long start = System.currentTimeMillis();
+
+        TestController testController = new TestController();
+
+        System.out.println(SpringApplication.class.getClass().getPackage());
+
         SpringApplication springApplication = new SpringApplication(ApplicationRun.class);
         springApplication.run(args);
+        long end = System.currentTimeMillis();
+
+        System.out.println("costTime=" + (end - start));
+
     }
 }
+//20731
+//16620
+
+//7604
+
+
+//19858

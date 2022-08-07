@@ -14,19 +14,13 @@
 // * See the License for the specific language governing permissions and
 // * limitations under the License.
 // */
-//package com.alipay.sofa.isle.sample.bootstrap.controller;
+//package com.alipay.sofa.isle.sample.provider.web;
 //
-//import com.alipay.sofa.isle.sample.bootstrap.HzhA;
 //import com.alipay.sofa.isle.sample.provider.api.Provider1;
 //import com.alipay.sofa.runtime.api.annotation.SofaReference;
-//import org.springframework.beans.BeansException;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.context.ApplicationContext;
-//import org.springframework.context.ApplicationContextAware;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RestController;
 //
-//import javax.annotation.PostConstruct;
 //import java.io.IOException;
 //
 ///**
@@ -34,25 +28,13 @@
 // * @since 2.4.5
 // */
 //@RestController
-//public class Provider1Controller implements ApplicationContextAware {
+//public class Provider1Controller2 {
 //
 //    @SofaReference
 //    private Provider1 provider1;
-//    @Autowired
-//    private HzhA hzhA;
-//
-//    @PostConstruct
-//    public void init(){
-//        hzhA.tt();
-//    }
-//
 //
 //    @RequestMapping("/provider1")
 //    public void provider1() throws IOException {
 //        provider1.action();
-//    }
-//
-//    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-//        System.out.println(applicationContext);
 //    }
 //}
